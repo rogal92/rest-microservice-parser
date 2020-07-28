@@ -28,6 +28,18 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(exc, body, new HttpHeaders(), HttpStatus.EXPECTATION_FAILED, request);
     }
 
+    @ExceptionHandler(NoFilteredDataException.class)
+    public ResponseEntity handleNoFilteredDataException(final RuntimeException exc, final WebRequest request) {
+        final Response body = new Response(NO_FILTERED_DATA.getValue());
+        return handleExceptionInternal(exc, body, new HttpHeaders(), HttpStatus.EXPECTATION_FAILED, request);
+    }
+
+    @ExceptionHandler(NoPeriodProvidedException.class)
+    public ResponseEntity handleNoPeriodProvidedException(final RuntimeException exc, final WebRequest request) {
+        final Response body = new Response(NO_PERIOD_PROVIDED.getValue());
+        return handleExceptionInternal(exc, body, new HttpHeaders(), HttpStatus.EXPECTATION_FAILED, request);
+    }
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity handleIllegalArgumentException(final RuntimeException exc, final WebRequest request) {
         final Response body = new Response(WRONG_RECORDS_FORMAT.getValue());

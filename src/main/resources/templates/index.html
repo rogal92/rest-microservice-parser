@@ -22,6 +22,17 @@
                     <button type="submit" class="btn btn-primary">Show all records</button>
                     <br><br>
                 </form>
+                <form method="get" th:action="@{/filterRecordsByPeriod}">
+                    <label for="from">From</label>
+                    <input type="text" id="gRecByPStart" name="start">
+                    <label for="to">To</label>
+                    <input type="text" id="gRecByPEnd" name="end">
+                    <button type="submit" class="btn btn-primary">Filter records by period</button>
+                </form>
+                <form method="get" th:action="@{/showRecordsByPeriod/page/1}">
+                    <button type="submit" class="btn btn-primary">Show filtered</button>
+                    <br><br>
+                </form>
                 <form method="get" th:action="@{/getRecord}">
                     <label for="pKey">PRIMARY_KEY:</label>
                     <input type="text" id="gRec" name="primaryKey">

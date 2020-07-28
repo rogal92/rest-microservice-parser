@@ -17,7 +17,9 @@ public enum ResponseCodes {
     PARSING_CSV_WENT_WRONG("Something went wrong while parsing CSV! "),
     WRONG_RECORDS_FORMAT("Check if your file is properly formatted. First 3 arguments are regular Strings, " +
             "4th should look like this: yyyy-mm-dd hh:mm:ss[.fffffffff]"),
-    STORING_RECORDS_PROBLEM("Something went wrong with storing the records: ");
+    STORING_RECORDS_PROBLEM("Something went wrong with storing the records: "),
+    NO_FILTERED_DATA("You need to filter some data first"),
+    NO_PERIOD_PROVIDED("You need to provide valid existing periods in this format: yyyy-mm-dd hh:mm:ss[.fffffffff]");
 
     private String value;
 }

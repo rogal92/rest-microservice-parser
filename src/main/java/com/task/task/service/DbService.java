@@ -13,7 +13,6 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.awt.print.Book;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Collections;
@@ -70,8 +69,6 @@ public class DbService {
 
         return new PageImpl<>(pageRecords, PageRequest.of(currentPage, pageSize), fileRecordsByPeriod.size());
     }
-
-
 
     public FileRecord getRecordByPrimaryKey(final String primaryKey) {
         LOG.info("Searching for record by PRIMARY_KEY" + primaryKey);
